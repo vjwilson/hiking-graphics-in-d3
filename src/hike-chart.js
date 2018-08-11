@@ -3,6 +3,8 @@ import { scaleLinear } from 'd3-scale';
 import { max } from "d3-array";
 import { axisBottom, axisLeft } from 'd3-axis';
 
+import './hike-chart.css';
+
 export function showChart() {
   //Width and height
   var w = 1000;
