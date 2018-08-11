@@ -1,0 +1,40 @@
+{
+  "name": "hiking-graphics-in-d3",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js",
+    "dev": "npm run webpack-dev-server -- --env.mode=development --watch --hot",
+    "dev:debug": "npm run debug -- --env.mode=development",
+    "prod": "npm run webpack -- --env.mode=production",
+    "prod:debug": "npm run debug -- --env.mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjwilson/hiking-graphics-in-d3.git"
+  },
+  "keywords": [],
+  "author": "Van J. Wilson <van.wilson1992@alumni.unc.edu> (https://vanwilson.info)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vjwilson/hiking-graphics-in-d3/issues"
+  },
+  "homepage": "https://github.com/vjwilson/hiking-graphics-in-d3#readme",
+  "dependencies": {
+    "d3": "^5.5.0"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4"
+  }
+}
