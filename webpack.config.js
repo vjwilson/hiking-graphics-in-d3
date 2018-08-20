@@ -16,6 +16,21 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
       output: {
         filename: 'bundle.js'
       },
+      module: {
+        rules: [
+          {
+            test: /\.svg/,
+            use: [
+              {
+                loader: 'url-loader',
+                options: {
+                  limit: 2000,
+                },
+              }
+            ],
+          },
+        ],
+      },
       plugins: [
         new HtmlWebpackPlugin(htmlConfig),
         new webpack.ProgressPlugin()
