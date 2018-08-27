@@ -1,6 +1,7 @@
 import image from './components/Image';
 import orderedList from './components/orderedList';
 import { showChart } from './hike-chart';
+import { makeLine } from './components/makeLine';
 
 import twoHikersLogo from './assets/images/two-hikers.svg';
 
@@ -31,3 +32,5 @@ siteMain.appendChild(hikeChart);
 
 const hikeChartLegend = orderedList(dataset);
 siteMain.appendChild(hikeChartLegend);
+
+makeLine();
