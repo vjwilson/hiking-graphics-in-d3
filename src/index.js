@@ -26,11 +26,12 @@ const dataset = [
   { distance: 4.3,   elevationChange: 1800, name: 'Blood Mountain', location: 'Chattahoochee National Forest' }
 ];
 
-const siteMain = document.getElementById('sitemain');
+const difficultyChartElement = document.getElementById('difficulty-chart');
 const hikeChart = showChart(dimensions, dataset);
-siteMain.appendChild(hikeChart);
+difficultyChartElement.appendChild(hikeChart);
 
 const hikeChartLegend = orderedList(dataset);
-siteMain.appendChild(hikeChartLegend);
+difficultyChartElement.appendChild(hikeChartLegend);
 
-makeLine();
+const lineChartElement = document.querySelector('#line-chart');
+makeLine(lineChartElement);

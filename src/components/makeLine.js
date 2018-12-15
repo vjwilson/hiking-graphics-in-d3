@@ -4,7 +4,7 @@ import { scaleLinear, scaleTime } from 'd3-scale';
 import { extent } from "d3-array";
 import { axisBottom, axisLeft } from 'd3-axis';
 
-export function makeLine() {
+export function makeLine(element) {
   const stepDays = [
     { date: new Date('2018-08-05'), value: 13536, },
     { date: new Date('2018-08-06'), value: 14126, },
@@ -60,7 +60,7 @@ export function makeLine() {
     .x((d) => { return xScale(d.date); })
     .y((d) => { return yScale(d.value); });
 
-  const vis = select("body").
+  const vis = select(element).
     append("svg")
       .attr("width", width)
       .attr("height", height);
@@ -68,7 +68,9 @@ export function makeLine() {
       console.log(stepLine(stepDays));
 
   vis.append('path')
-    .attr('d', stepLine(stepDays));
+    .attr('d', stepLine(stepDays))
+    .attr("stroke", "black")
+    .attr("fill", "none");
 
   // draw x axis with labels and move to the bottom of the chart area
   vis.append("g")
