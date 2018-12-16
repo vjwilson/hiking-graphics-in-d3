@@ -5,7 +5,7 @@ import { axisBottom, axisLeft } from 'd3-axis';
 
 import './hike-chart.css';
 
-export function showChart(dimensions = { w: 1000, h: dimensions.h, padding: 20 }, dataset = []) {
+export function showChart(dimensions = { w: 1000, h: dimensions.h, padding: 20 }, dataset = [], element) {
   //Width and height
   const w = dimensions.w;
   const h = dimensions.h;
