@@ -3,6 +3,7 @@ import { line } from "d3-shape";
 import { scaleLinear, scaleTime } from 'd3-scale';
 import { extent } from "d3-array";
 import { axisBottom, axisLeft } from 'd3-axis';
+import { timeFormat } from "d3-time-format";
 
 export function makeLine(element) {
   const stepDays = [
@@ -42,7 +43,8 @@ export function makeLine(element) {
 
   // define the y axis
   var xAxis = axisBottom()
-    .scale(xScale);
+    .scale(xScale)
+    .tickFormat(timeFormat('%m-%d-%y'));
 
   const yExtent = extent(stepDays, (d) => d.value);
   // define the y scale  (vertical)

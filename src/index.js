@@ -1,11 +1,14 @@
+import { csv } from 'd3-fetch';
+
 import image from './components/Image';
 import orderedList from './components/orderedList';
 import { showChart } from './hike-chart';
 import { makeLine } from './components/makeLine';
+import { getBarChart } from './components/barChart';
 
 import twoHikersLogo from './assets/images/two-hikers.svg';
 
-console.log('It really works!');
+import './styles.css';
 
 const siteHeader = document.getElementById('siteheader');
 const siteLogo = image(twoHikersLogo);
@@ -35,3 +38,15 @@ difficultyChartElement.appendChild(hikeChartLegend);
 
 const lineChartElement = document.querySelector('#line-chart');
 makeLine(lineChartElement);
+
+csv('assets/data/highest_mountains_in_nc.csv')
+  .then(function(data) {
+    // data is now whole data set
+    // draw chart in here!
+    const heights = data.map(d => +d['Elevation, ft']);
+    const heightChart = getBarChart(dimensions, heights);
+
+    const barChartElement = document.querySelector('#highest-nc-mountains');
+    barChartElement.appendChild(heightChart);
+  });
+

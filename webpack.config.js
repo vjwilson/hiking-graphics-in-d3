@@ -16,7 +16,8 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
     {
       mode,
       output: {
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
       },
       module: {
         rules: [
