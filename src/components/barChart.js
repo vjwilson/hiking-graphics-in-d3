@@ -14,8 +14,8 @@ export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20
 
   const xScale = scaleBand()
           .domain(dataset)
-          .rangeRound([0, w - padding * 3])
-          .paddingInner(0.05);
+          .rangeRound([padding, w - padding * 3])
+          .paddingInner(0.1);
 
   const yScale = scaleLinear()
             .domain([6000, max(dataset, function(d) { return d; })])
@@ -35,10 +35,10 @@ export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20
      .attr("y", function(d) {
         return yScale(d);
      })
-     .attr("transform", "translate(" + padding * 2 + ", 0)")
+     .attr("transform", "translate(" + padding + ", 0)")
      .attr("width", w / dataset.length - barPadding)
      .attr("height", function(d) {
-        return d - 6000 - padding * 2;
+        return yScale(6000) - yScale(d);
      });
 
   const xAxis = axisBottom()
@@ -50,7 +50,7 @@ export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20
 
   svg.append("g")
       .attr("class", "axis") //Assign "axis" class
-      .attr("transform", "translate(" + padding * 2 + "," + (h - padding) + ")")
+      .attr("transform", "translate(" + padding + "," + (h - padding) + ")")
       .call(xAxis);
 
   svg.append("g")
