@@ -43,8 +43,14 @@ csv('assets/data/highest_mountains_in_nc.csv')
   .then(function(data) {
     // data is now whole data set
     // draw chart in here!
-    const heights = data.map(d => +d['Elevation, ft']);
-    const heightChart = getBarChart(dimensions, heights);
+    const parsedHeights = data.map(d => {
+      return {
+        value: +d['Elevation, ft'],
+        label: d['Summit'],
+      };
+    });
+    const baseForSummitChart = 6000;
+    const heightChart = getBarChart(dimensions, parsedHeights, baseForSummitChart);
 
     const barChartElement = document.querySelector('#highest-nc-mountains');
     barChartElement.appendChild(heightChart);

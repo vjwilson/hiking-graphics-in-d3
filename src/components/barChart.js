@@ -3,55 +3,70 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 import { max } from "d3-array";
 import { axisBottom, axisLeft } from 'd3-axis';
 
-export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20 }, dataset = []) {
+export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20 }, dataset = [], baseHeight = 0) {
   //Width and height
   const w = dimensions.w;
   const h = dimensions.h;
   const padding = dimensions.padding;
   const barPadding = 8;
 
-  console.log('in function dataset: ', dataset)
+  const values = dataset.map(d => +d.value);
+  const labels = dataset.map(d => d.label);
 
-  const xScale = scaleBand()
-          .domain(dataset)
+  const xScaleValues = scaleBand()
+          .domain(values)
+          .rangeRound([padding, w - padding * 3])
+          .paddingInner(0.1);
+
+  const xScaleLabels = scaleBand()
+          .domain(labels)
           .rangeRound([padding, w - padding * 3])
           .paddingInner(0.1);
 
   const yScale = scaleLinear()
-            .domain([6000, max(dataset, function(d) { return d; })])
+            .domain([baseHeight, max(values, function(d) { return d; })])
             .range([h - padding, padding]);
 
   const svg = create('svg')
               .attr("width", w)
-              .attr("height", h);
+              .attr("height", h + 100);
 
   svg.selectAll("rect")
-     .data(dataset)
+     .data(values)
      .enter()
      .append("rect")
      .attr("x", function(d, i) {
-            return xScale(d);
+            return xScaleValues(d);
      })
      .attr("y", function(d) {
         return yScale(d);
      })
      .attr("transform", "translate(" + padding + ", 0)")
-     .attr("width", w / dataset.length - barPadding)
+     .attr("width", w / values.length - barPadding)
      .attr("height", function(d) {
-        return yScale(6000) - yScale(d);
-     });
+        return yScale(baseHeight) - yScale(d);
+     })
+      .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em");
 
   const xAxis = axisBottom()
-                .scale(xScale);
+                .scale(xScaleLabels);
 
   const yAxis = axisLeft()
                 .scale(yScale)
-                .ticks(4);
+                .ticks(9);
 
   svg.append("g")
       .attr("class", "axis") //Assign "axis" class
       .attr("transform", "translate(" + padding + "," + (h - padding) + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)");
 
   svg.append("g")
       .attr("class", "axis") //Assign "axis" class

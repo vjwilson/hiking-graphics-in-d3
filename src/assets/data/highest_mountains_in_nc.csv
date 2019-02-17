@@ -1,21 +1,21 @@
 ﻿Rank,Summit,Mountain Range,Wikipedia,"Elevation, ft","Elevation, m","Prominence, ft","Prominence, m","Isolation, mi","Isolation, km",Latitude,Longitude
-1,Mount Mitchell[2],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6684,2037,6094,1857,1189,"1,914.00",35.764857,82.26506
-2,Mount Craig[3],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6646,"2,026",285,87,0.89,1.44,35.777584,82.261759
-3,Clingmans Dome[4][5],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6643,2025,4505,1373,70.7,113.9,35.562919,83.498601
-4,Mount Guyot[6],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6621,2018,1581,482,16.74,26.9,35.705311,83.257683
-5,Balsam Cone[7],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6600,2012,360,110,0.9,1.45,35.789705,82.255846
-6,Mount Gibbes[8],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6520,1987,400,122,2.1,3.38,35.739124,82.285235
-7,Mount Chapman[9],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6417,1956,577,176,1.49,2.39,35.686712,83.271089
-8,Richland Balsam[10],Great Balsam Mountains,https://en.wikipedia.org/wiki/Great_Balsam_Mountains,6410,1954,3010,917,27.1,43.6,35.367588,82.990335
-9,Old Black[11],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6370,1942,170,52,0.68,1.1,35.715047,83.255426
-10,Celo Knob[12],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6327,1928,607,185,3.52,5.66,35.852423,82.248678
-11,Blackstock Knob[13],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6320,1926,440,134,1.6,2.57,35.738063,82.318615
-12,Waterrock Knob[14],Plott Balsams,https://en.wikipedia.org/wiki/Plott_Balsams,6292,1918,1947,593,10.7,17.22,35.464088,83.137812
-13,Roan High Knob[15][16],Unaka Range,https://en.wikipedia.org/wiki/Unaka_Range,6285,1916,3485,1062,18.8,30.3,36.104561,82.122448
-14,Mount Lyn Lowry[17],Plott Balsams,https://en.wikipedia.org/wiki/Plott_Balsams,6240,1902,360,110,1.5,2.41,35.46371,83.110627
-15,Luftee Knob[18],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6234,1900,314,96,2.5,4.02,35.692447,83.215382
-16,Mount Kephart[19][20],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6217,1895,657,200,2.8,4.51,35.630988,83.389906
-17,Black Balsam Knob[21],Great Balsam Mountains,https://en.wikipedia.org/wiki/Great_Balsam_Mountains,6214,1894,989,301,7.1,11.43,35.328003,82.874571
-18,Winter Star Mountain[22],Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6203,1891,283,86,1.1,1.77,35.817668,82.249273
-19,Mount Collins[23],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6188,1886,465,142,1.7,2.74,35.586275,83.473046
-20,Marks Knob[24],Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6169,1880,249,76,1.4,2.25,35.67999,83.248498
+1,Mount Mitchell,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6684,2037,6094,1857,1189,"1,914.00",35.764857,82.26506
+2,Mount Craig,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6646,"2,026",285,87,0.89,1.44,35.777584,82.261759
+3,Clingmans Dome,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6643,2025,4505,1373,70.7,113.9,35.562919,83.498601
+4,Mount Guyot,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6621,2018,1581,482,16.74,26.9,35.705311,83.257683
+5,Balsam Cone,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6600,2012,360,110,0.9,1.45,35.789705,82.255846
+6,Mount Gibbes,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6520,1987,400,122,2.1,3.38,35.739124,82.285235
+7,Mount Chapman,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6417,1956,577,176,1.49,2.39,35.686712,83.271089
+8,Richland Balsam,Great Balsam Mountains,https://en.wikipedia.org/wiki/Great_Balsam_Mountains,6410,1954,3010,917,27.1,43.6,35.367588,82.990335
+9,Old Black,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6370,1942,170,52,0.68,1.1,35.715047,83.255426
+10,Celo Knob,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6327,1928,607,185,3.52,5.66,35.852423,82.248678
+11,Blackstock Knob,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6320,1926,440,134,1.6,2.57,35.738063,82.318615
+12,Waterrock Knob,Plott Balsams,https://en.wikipedia.org/wiki/Plott_Balsams,6292,1918,1947,593,10.7,17.22,35.464088,83.137812
+13,Roan High Knob,Unaka Range,https://en.wikipedia.org/wiki/Unaka_Range,6285,1916,3485,1062,18.8,30.3,36.104561,82.122448
+14,Mount Lyn Lowry,Plott Balsams,https://en.wikipedia.org/wiki/Plott_Balsams,6240,1902,360,110,1.5,2.41,35.46371,83.110627
+15,Luftee Knob,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6234,1900,314,96,2.5,4.02,35.692447,83.215382
+16,Mount Kephart,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6217,1895,657,200,2.8,4.51,35.630988,83.389906
+17,Black Balsam Knob,Great Balsam Mountains,https://en.wikipedia.org/wiki/Great_Balsam_Mountains,6214,1894,989,301,7.1,11.43,35.328003,82.874571
+18,Winter Star Mountain,Black Mountains,https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina),6203,1891,283,86,1.1,1.77,35.817668,82.249273
+19,Mount Collins,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6188,1886,465,142,1.7,2.74,35.586275,83.473046
+20,Marks Knob,Great Smoky Mountains,https://en.wikipedia.org/wiki/Great_Smoky_Mountains,6169,1880,249,76,1.4,2.25,35.67999,83.248498
