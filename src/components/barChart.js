@@ -14,17 +14,19 @@ export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20
   const labels = dataset.map(d => d.label);
 
   const xScaleValues = scaleBand()
-          .domain(values)
+          .domain(dataset.map(d => +d.value))
           .rangeRound([padding, w - padding * 3])
           .paddingInner(0.1);
 
   const xScaleLabels = scaleBand()
-          .domain(labels)
+          .domain(dataset.map(d => d.label))
           .rangeRound([padding, w - padding * 3])
           .paddingInner(0.1);
 
+  const exactYMax = max(dataset, function(d) { return +d.value; });
+  const roundedYMax = roundUp(exactYMax, 100);
   const yScale = scaleLinear()
-            .domain([baseHeight, max(values, function(d) { return d; })])
+            .domain([baseHeight, roundedYMax])
             .range([h - padding, padding]);
 
   const svg = create('svg')
@@ -32,24 +34,38 @@ export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20
               .attr("height", h + 100);
 
   svg.selectAll("rect")
-     .data(values)
+     .data(dataset)
      .enter()
      .append("rect")
      .attr("x", function(d, i) {
-            return xScaleValues(d);
+            return xScaleValues(+d.value);
      })
      .attr("y", function(d) {
-        return yScale(d);
+        return yScale(+d.value);
      })
      .attr("transform", "translate(" + padding + ", 0)")
      .attr("width", w / values.length - barPadding)
      .attr("height", function(d) {
-        return yScale(baseHeight) - yScale(d);
-     })
-      .selectAll("text")
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", ".15em");
+        return yScale(baseHeight) - yScale(+d.value);
+     });
+
+     svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text(function(d) {
+           return d.value;
+       })
+       .style("text-anchor", "middle")
+       .attr("x", function(d, i) {
+          return xScaleValues(+d.value) + padding *2;
+       })
+       .attr("y", function(d) {
+           return yScale(+d.value) + padding;
+       })
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "11px")
+       .attr("fill", "white");
 
   const xAxis = axisBottom()
                 .scale(xScaleLabels);
@@ -74,4 +90,19 @@ export function getBarChart(dimensions = { w: 1000, h: dimensions.h, padding: 20
       .call(yAxis);
 
     return svg.node();
+  }
+
+  function roundUp(max, clamp = 10) {
+    let x = max;
+    let i = 0;
+    while (x > clamp) {
+      i = i + 1;
+      x = x / 10;
+    }
+
+    if (i) {
+      x = Math.ceil(x);
+      x = x * (10 ** i);
+    }
+    return x;
   }
